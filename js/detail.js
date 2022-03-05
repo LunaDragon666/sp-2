@@ -23,7 +23,7 @@ async function getProduct() {
         const response = await fetch(productUrl);
         const details = await response.json();
 
-        document.title = details.brand + details.name;
+        document.title = details.brand + ' ' + details.name + ' ' + details.color;
 
         const container = document.querySelector(".row");
         container.innerHTML = `<div class="col">
