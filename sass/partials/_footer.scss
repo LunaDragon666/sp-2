@@ -1,0 +1,16 @@
+footer {
+  align-items: start;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 0rem 2.5rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+}
+
+/* Make the footer stay at the bottom of the page */
+.wrapper {
+    flex: 1 0 auto;
+}
