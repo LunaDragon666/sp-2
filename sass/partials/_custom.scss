@@ -1,0 +1,9 @@
+$colours: (
+    cta: #f263a6,
+    cta-hover: #d8146f,
+    light: white,
+);
+
+@function getColour($colour) {
+    @return map-get($colours, $colour);
+}
