@@ -1,0 +1,33 @@
+.input-group {
+    padding: 0 2.5rem;
+}
+
+.btn {
+    line-height: 0.5;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.message.error {
+    border-color: red;
+    color: white;
+    background: red;
+}
+
+.message.warning {
+    border-color: orange;
+    color: white;
+    background: orange;
+}
+
+/* Searchbar */
+.input-group-text {
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.search {
+    background: #012615;
+    padding: 2rem 3rem;
+}
