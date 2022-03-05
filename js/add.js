@@ -57,7 +57,7 @@ async function addProduct(name, brand, product_type, price, note, color, descrip
         method: "POST",
         body: data,
         headers: {
-            "Content-Type": "/application/json/", // "/" before application/json/?
+            "Content-Type": "/application/json", // "/" before application/json/?
             Authorization: `Bearer ${token}`,
         },
     };
