@@ -1,0 +1,113 @@
+html,
+body {
+    color: #012615;
+    height: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding: 2rem 0 1.5rem;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.card-title {
+    margin: 0.5rem 0 2rem 0;
+}
+
+.card-text {
+    font-size: 24px;
+    margin-bottom: 3.25rem;
+}
+
+/* Featured */
+.header-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.mask {
+    height: 100%;    
+}
+
+p.mb-3 {
+    margin-top: -1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.cta-button {
+    background: #A1BF36;
+    color: white;
+    padding: 1rem 3rem;
+}
+
+/* Product page(s)*/
+.button-wrap {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.card-body {
+    padding: 0.75rem 0 2.75rem;
+}
+
+.card-img-top {
+    box-shadow: rgb(60 47 47 / 10%) 0px 1px 2px 0px;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-img-top:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.detail-img {
+    width: 100%;
+}
+
+.card-title {
+    display: -webkit-box;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.cart-btn, .view-btn {
+    background: getColour(cta);
+    border: none;
+    color: etColour(light);
+    font-weight: bold;
+    padding: .5rem 0;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease-out;
+    width: 100%;
+}
+
+.view-btn {
+    letter-spacing: 0.05rem;
+    padding: 1rem 3.4rem;
+    text-decoration: none;
+}
+
+.cart-btn:hover, .view-btn:hover {
+    background-color: getColour(cta-hover);
+}
