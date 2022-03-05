@@ -1,0 +1,203 @@
+:root {
+    --cta: #f263a6;
+    --cta-hover: #d8146f;
+    --primary-color: #012615;
+    --secondary-color: #A1BF36;
+}
+
+html,
+body {
+    color: var(--primary-color) !important;
+    height: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding: 2rem 0 1.5rem;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.navbar {
+    background: var(--secondary-color);
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem 1.25rem !important;
+}
+
+.navbar a {
+    color: var(--primary-color) !important;
+}
+
+.navbar a:hover {
+    color: white !important;
+}
+
+a.nav-link.active {
+    color: blue !important;
+}
+
+.navbar-brand.nav-link.active {
+    color: black !important;
+}
+
+.card-title {
+    margin: 1.5rem 0 1.5rem 0 !important;
+}
+
+.card-text {
+    font-size: 24px;
+    margin-bottom: 3.5rem !important;
+}
+
+/* Featured */
+.header-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.mask {
+    height: 100%;    
+}
+
+h1.mb-3 {
+    margin-top: -3rem;
+}
+
+p.mb-3 {
+    margin-top: -1.5rem;
+    margin-bottom: 3.5rem !important;
+}
+
+.cta-button {
+    background: var(--secondary-color);
+    color: white;
+    font-size: 28px;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.cta-button:hover {
+    color: white;
+    background: var(--primary-color);
+    text-decoration: none !important;
+}
+
+/* Search bar */
+.input-group-text {
+  border-radius: .25rem 0 0 .25rem !important;
+}
+
+.input-group {
+    padding: 0 2.5rem;
+}
+
+.btn {
+    line-height: 0.5 !important;
+}
+
+.search {
+    background: var(--primary-color);
+    padding: 2rem 3rem;
+}
+
+/* Product page(s) */
+.button-wrap {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.card-body {
+    padding: 1.75rem 0 2.75rem !important;
+}
+
+.card-img-top {
+    box-shadow: rgb(60 47 47 / 10%) 0px 1px 2px 0px;
+    height: 300px !important;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-img-top:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.detail-img {
+    width: 100%;
+}
+
+.card-title {
+    display: -webkit-box;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.cart-btn, .view-btn {
+    background: var(--cta);
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    padding: .5rem 0;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease-out;
+    width: 100%;
+}
+
+.cart-btn:hover, .view-btn:hover {
+    background-color: var(--cta-hover);
+}
+
+.view-btn {
+    letter-spacing: 0.05rem;
+    padding: 1rem 3.4rem;
+    text-decoration: none !important;
+}
+
+/* Login */
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.message.error {
+    border-color: red;
+    color: white;
+    background: red;
+}
+
+.message.warning {
+    border-color: orange;
+    color: white;
+    background: orange;
+}
+
+/* Make the footer stay at the bottom of the page */
+.wrapper {
+    flex: 1 0 auto;
+}
+
+footer {
+    align-items: start;
+    display: flex !important;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 0rem 2.5rem;
+}
+
+footer i {
+    font-size: 1.5rem;
+}
