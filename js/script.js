@@ -6,7 +6,7 @@ import searchProducts from "./ui/searchProducts.js";
 createMenu();
 
 async function fetchProducts () {
-    const productsUrl = baseUrl + "/makeups";
+    const productsUrl = baseUrl + "/products";
     try {
         const response = await fetch(productsUrl);
         const json = await response.json();
