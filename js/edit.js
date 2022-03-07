@@ -51,6 +51,7 @@ const productUrl = baseUrl + "/products/" + id;
         idInput.value = details.id;
 
         deleteButton(details.id);
+        console.log(deleteButton)
 
         console.log(details);
     } catch (error) {
@@ -97,7 +98,7 @@ async function updateProduct(name, brand, product_type, price, note, color, desc
         method: "PUT",
         body: data,
         headers: {
-            "Content-Type": "application/json/",
+            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
     };
