@@ -15,7 +15,7 @@ export default function deleteButton(id) {
         console.log(doDelete);
 
         if(doDelete) {
-            const url = baseUrl = "/makeups/" + id;
+            const url = baseUrl = "/products/" + id;
 
             const token = getToken();
     
