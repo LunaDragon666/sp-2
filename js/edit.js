@@ -84,7 +84,7 @@ function submitForm(event) {
     updateProduct(nameValue, brandValue, productValue, priceValue, noteValue, colorValue, descriptionValue);
 }
 
-async function updateProduct(name, brand, product_type, price, note, color, description, id) {
+async function updateProduct(name, brand, product_type, price, note, color, description) {
     const url = baseUrl + "/products/" + id;
     console.log(url);
 
