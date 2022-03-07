@@ -108,7 +108,7 @@ async function updateProduct(name, brand, product_type, price, note, color, desc
         console.log(json);
 
         if (json.updated_at) {
-            displayMessage("success", "Product updated", ".message-container");
+            displayMessage("success", "Product updated", ".message-cont");
         }
 
         if (json.error) {
