@@ -28,6 +28,7 @@ async function getProduct() {
         const container = document.querySelector(".row");
         container.innerHTML = `<div class="col">
                                 <!-- Place image here -->
+                                <img src="${details.image.url}" class="card-img" alt="${details.brand} ${details.name} ${details.color}" >
                               </div>
                               <div class="col">
                                 <h1>
