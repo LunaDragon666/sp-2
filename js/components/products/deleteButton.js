@@ -8,6 +8,9 @@ export default function deleteButton(id) {
 
     const deleteBtn = document.querySelector(".delete");
 
+    console.log(deleteContainer);
+    console.log(deleteBtn);
+
     deleteBtn.onclick = async function () {
         console.log(id);
 
@@ -18,6 +21,10 @@ export default function deleteButton(id) {
             const url = baseUrl + "/products/" + id;
 
             const token = getToken();
+
+            console.log(url);
+            console.log(token);
+            console.log(options);
     
             const options = {
                 method: "DELETE",
@@ -33,6 +40,8 @@ export default function deleteButton(id) {
                 location.href = "products.html";
     
                 console.log(json);
+                console.log(response);
+
             } catch (error) {
                 console.log(error);
             }
