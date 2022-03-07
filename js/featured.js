@@ -4,21 +4,22 @@ import displayMessage from "./components/common/displayMessage.js";
 
 createMenu();
 
-// Header API call 
+// Header API call
 async function fetchHeader() {
     const container = document.querySelector(".hero_banner");
-    const url = "http://localhost:8082/header";
+    const url = "https://strapi-api-ml.herokuapp.com/home";
 
     const response = await fetch(url);
     const json = await response.json();
 
     console.log(json);
+    console.log(json.hero_banner.url);
 
     container.innerHTML = `
     <div
     class="header-image text-center bg-image"
     style="
-      background-image: url('${baseUrl}${json.Hero_banner.url}');
+      background-image: url('${json.hero_banner.url}');
       height: 425px;
     ">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);">
@@ -32,14 +33,14 @@ async function fetchHeader() {
     </div>
   </div>
 
-                        ` 
+                        `
 }
 
 fetchHeader();
 
 
 // Featured products display
-const productsUrl = baseUrl + "/makeups";
+const productsUrl = baseUrl + "/products";
 
 async function makeApiCall() {
     const resultsContainer = document.querySelector(".row");
@@ -49,6 +50,7 @@ async function makeApiCall() {
         const results = await response.json();
 
         console.log(results);
+        console.log(results[0].image.url);
 
         for(let i = 0; i < results.length; i++) {
 
@@ -60,7 +62,8 @@ async function makeApiCall() {
             <a class="product" href="detail.html?id=${results[i].id}" style="text-decoration: none">
             <div class="card-block h-100" style="width: 15rem;">
             <div class="card-body">
-            <img src="${baseUrl}${results[i].image[0].url}" class="card-img-top" alt="Mascara" >
+            <!-- Place image here -->
+            <img src="${results[i].image.url}" class="card-img-top" alt="Mascara" >
                                             <h2 class="card-title" style="font-size: 1.25rem;" data-toggle="tooltip" data-placement="bottom" title="${results[i].brand} ${results[i].name} ${results[i].color}">
                                             ${results[i].brand}
                                             ${results[i].name}
