@@ -38,26 +38,24 @@ function submitForm(event) {
     const productValue = product_type.value.trim();
 
     console.log("priceValue", priceValue);
-
-    if (brandValue.length === 0 || colorValue.length === 0 || descriptionValue.length === 0 || nameValue.length === 0 || productValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || noteValue.length === 0) {
-        return displayMessage("warning", "Please supply proper values", ".message-cont");
-    }
-
-    addProduct(brandValue, colorValue, descriptionValue,  nameValue, priceValue, productValue, noteValue);
+    addProduct(nameValue, brandValue, productValue, priceValue, noteValue, colorValue, descriptionValue);
 }
 
 async function addProduct(name, brand, product_type, price, note, color, description) {
-    const url = baseUrl + "/makeups/";
+    const url = baseUrl + "/products";
+    console.log(url);
 
     const data = JSON.stringify({ name: name, brand: brand, product_type: product_type, price: price, note: note, color: color, description: description });
 
     const token = getToken();
+    console.log(token);
+    console.log(data);
 
     const options = {
         method: "POST",
-        body: data,
+        body:  data,
         headers: {
-            "Content-Type": "/application/json", // "/" before application/json/?
+            "Content-Type": "application/json", 
             Authorization: `Bearer ${token}`,
         },
     };
@@ -70,7 +68,6 @@ async function addProduct(name, brand, product_type, price, note, color, descrip
             displayMessage("success", "Product created", ".message-cont");
             addForm.reset();
         }
-
         if (json.error) {
             displayMessage("error", "Failed to create product", ".message-cont");
         }
