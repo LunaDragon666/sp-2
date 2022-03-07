@@ -51,7 +51,7 @@ const productUrl = baseUrl + "/products/" + id;
         idInput.value = details.id;
 
         deleteButton(details.id);
-        console.log(deleteButton)
+        console.log(deleteButton);
 
         console.log(details);
     } catch (error) {
