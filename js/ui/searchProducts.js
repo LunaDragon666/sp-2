@@ -8,13 +8,12 @@ export default function searchProducts(product, targetElement) {
     const searching = event.target.value.trim().toLowerCase();
 
     const filteredSearch = product.filter(function (search) {
-      if (search.name.toLowerCase().includes(searching) || search.brand.toLowerCase().includes(searching)) {
+      if (search.brand.toLowerCase().includes(searching) || search.name.toLowerCase().includes(searching) || search.product_type.toLowerCase().includes(searching)) {
         return true;
       } 
 
     });
 
-    //searchProducts(filteredSearch, container);
     console.log(filteredSearch);
     productsContainer(filteredSearch, targetElement);
   };
