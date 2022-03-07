@@ -12,10 +12,11 @@ async function fetchProducts () {
         const json = await response.json();
         productsContainer(json);
         searchProducts(json);
-}catch{
+
+} catch {
   console.log (error)
           displayMessage("error", error, ".row");
-}
+  }
 };
 
 fetchProducts();
