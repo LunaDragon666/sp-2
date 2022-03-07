@@ -4,7 +4,7 @@ import { getToken } from "../../utils/storage.js";
 export default function deleteButton(id) {
     const deleteContainer = document.querySelector(".delete-arena");
 
-    deleteContainer.innerHTML = `<button type="button class="delete>Delete</button>`;
+    deleteContainer.innerHTML = `<button type="button" class="delete">Delete</button>`;
 
     const deleteBtn = document.querySelector(".delete");
 
@@ -24,7 +24,6 @@ export default function deleteButton(id) {
 
             console.log(url);
             console.log(token);
-            console.log(options);
     
             const options = {
                 method: "DELETE",
