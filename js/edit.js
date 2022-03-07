@@ -33,12 +33,13 @@ const price = document.querySelector("#price");
 const name = document.querySelector("#name");
 const product_type = document.querySelector("#product_type");
 
-const productUrl = baseUrl + "/makeups/" + id;
+const productUrl = baseUrl + "/products/" + id;
 
 (async function () {
     try {
         const response = await fetch(productUrl);
         const details = await response.json();
+        console.log(details);
 
         brand.value = details.brand;
         color.value = details.color;
@@ -57,7 +58,7 @@ const productUrl = baseUrl + "/makeups/" + id;
     } finally {
         loading.style.display = "none";
         editForm.style.display = "block";
-    } 
+    }
 })();
 
 editForm.addEventListener("submit", submitForm);
@@ -80,11 +81,13 @@ function submitForm(event) {
         return displayMessage("warning", "Please supply proper values", ".message-cont");
     }
 
-    updateProduct(brandValue, colorValue, descriptionValue, nameValue, priceValue, productValue, noteValue, idValue);
+    updateProduct(nameValue, brandValue, productValue, priceValue, noteValue, colorValue, descriptionValue);
 }
 
 async function updateProduct(name, brand, product_type, price, note, color, description, id) {
-    const url = baseUrl + "/makeups/" + id; //?
+    const url = baseUrl + "/products/" + id;
+    console.log(url);
+
     const data = JSON.stringify({ name: name, brand: brand, product_type: product_type, price: price, note: note, color: color, description: description
    });
 
@@ -94,7 +97,7 @@ async function updateProduct(name, brand, product_type, price, note, color, desc
         method: "PUT",
         body: data,
         headers: {
-            "Content-Type": "/application/json/",
+            "Content-Type": "application/json/",
             Authorization: `Bearer ${token}`,
         },
     };
