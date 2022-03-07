@@ -7,7 +7,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 const shoppingCart = document.querySelector(".shopping-cart");
-let cartList = []; 
+let cartList = [];
 
 createMenu();
 
@@ -15,7 +15,7 @@ if (!id) {
     document.location.href = "/";
 }
 
-const productUrl = baseUrl + "/makeups/" + id;
+const productUrl = baseUrl + "/products/" + id;
 console.log(productUrl);
 
 async function getProduct() {
@@ -50,7 +50,7 @@ async function getProduct() {
     } catch (error) {
         displayMessage("error", error, ".row");
     }
-// shoppimg cart start  
+// shoppimg cart start
   if(localStorage.getItem("row")) {
     console.log("1");
     cartList = JSON.parse(localStorage.getItem("row"));
@@ -76,9 +76,9 @@ async function getProduct() {
         }
       })
       shoppingCart.innerHTML += `<li>
-                                    ${matchingItem.brand} 
-                                    ${matchingItem.name} 
-                                    ${matchingItem.color} 
+                                    ${matchingItem.brand}
+                                    ${matchingItem.name}
+                                    ${matchingItem.color}
                                     <button class="delete" data-id="${matchingItem.id}">
                                       Delete
                                     </button>
