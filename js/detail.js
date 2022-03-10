@@ -9,6 +9,9 @@ const id = params.get("id");
 const shoppingCart = document.querySelector(".shopping-cart");
 let cartList = [];
 
+console.log(shoppingCart);
+console.log(cartList);
+
 createMenu();
 
 if (!id) {
@@ -27,8 +30,7 @@ async function getProduct() {
 
         const container = document.querySelector(".row");
         container.innerHTML = `<div class="col">
-                                <!-- Place image here -->
-                                <img src="${details.image.url}" class="card-img" alt="${details.brand} ${details.name} ${details.color}" >
+                              <!-- <img src="${details.image.url}" class="card-img" alt="${details.brand} ${details.name} ${details.color}" > -->
                               </div>
                               <div class="col">
                                 <h1>
@@ -53,14 +55,14 @@ async function getProduct() {
     }
 // shoppimg cart start
   if(localStorage.getItem("row")) {
-    console.log("1");
+    console.log(getItem);
     cartList = JSON.parse(localStorage.getItem("row"));
     shoppingCart.innerHTML = "";
     addCartItemsToPage(cartList);
   };
   const addToCartButtons = document.querySelectorAll(".cart-btn");
   addToCartButtons.forEach(button => {
-    console.log("2");
+    console.log(addToCartButtons);
     button.onclick = function(event){
       cartList.push(event.target.dataset.product);
       localStorage.setItem("row",JSON.stringify(cartList));
@@ -69,7 +71,7 @@ async function getProduct() {
     }
   })
   function addCartItemsToPage(list){
-    console.log("5");
+    console.log(list);
     list.forEach(cartItem => {
       const matchingItem = results.find(function(item){
         if(item.id === parseInt(cartItem)){
