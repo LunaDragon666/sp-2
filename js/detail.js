@@ -53,7 +53,7 @@ async function getProduct() {
     } catch (error) {
         displayMessage("error", error, ".row");
     }
-// shoppimg cart start
+// shopping cart functions starts here
   if(localStorage.getItem("products")) {
     console.log(getItem);
     cartList = JSON.parse(localStorage.getItem("products"));
@@ -110,5 +110,4 @@ async function getProduct() {
   }
   // shopping cart function(s) ends here
 }
-
 getProduct();
