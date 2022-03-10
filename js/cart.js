@@ -16,6 +16,8 @@ async function getProducts() {
       const matchingItem = results.find(function(item){
         if(item.id === parseInt(cartItem)){
           return true;
+        } else {
+          cart.innerHTML += "Your cart is emty";
         }
       })
       cart.innerHTML += matchingItem.name;
