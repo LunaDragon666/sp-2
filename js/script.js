@@ -36,8 +36,7 @@ export function productsContainer (json) {
             <a class="product" href="detail.html?id=${product.id}" style="text-decoration: none">
             <div class="card-block h-100" style="width: 15rem;">
             <div class="card-body">
-            <!-- Place image here -->
-            <img src="${product.image.url}" class="card-img-top" alt="Mascara" >
+            <!-- <img src="${product.image.url}" class="card-img-top" alt="Mascara" > -->
             <h2 class="card-title" style="font-size: 1.25rem;" data-toggle="tooltip" data-placement="bottom" title="${product.brand} ${product.name} ${product.color}">
                 ${product.brand}
                 ${product.name}
