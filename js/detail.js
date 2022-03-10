@@ -28,8 +28,8 @@ async function getProduct() {
 
         document.title = details.brand + ' ' + details.name + ' ' + details.color;
 
-        const container = document.querySelector(".row");
-        container.innerHTML = `<div class="col">
+        const productsContainer = document.querySelector(".products");
+        productsContainer.innerHTML = `<div class="col">
                               <!-- <img src="${details.image.url}" class="card-img" alt="${details.brand} ${details.name} ${details.color}" > -->
                               </div>
                               <div class="col">
@@ -54,9 +54,9 @@ async function getProduct() {
         displayMessage("error", error, ".row");
     }
 // shoppimg cart start
-  if(localStorage.getItem("row")) {
+  if(localStorage.getItem("products")) {
     console.log(getItem);
-    cartList = JSON.parse(localStorage.getItem("row"));
+    cartList = JSON.parse(localStorage.getItem("products"));
     shoppingCart.innerHTML = "";
     addCartItemsToPage(cartList);
   };
@@ -74,6 +74,7 @@ async function getProduct() {
     console.log(list);
     list.forEach(cartItem => {
       const matchingItem = results.find(function(item){
+        console.log(matchingItem);
         if(item.id === parseInt(cartItem)){
           return true;
         }
@@ -99,8 +100,9 @@ async function getProduct() {
           }
         })
         list = newCartList;
-        console.log("4");
-        localStorage.setItem("row",JSON.stringify(list));
+        console.log(list);
+        console-log(newCartList);
+        localStorage.setItem("products",JSON.stringify(list));
         shoppingCart.innerHTML = "";
         addCartItemsToPage(list);
       }
