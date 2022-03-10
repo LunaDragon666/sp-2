@@ -1,14 +1,13 @@
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./components/common/createMenu.js";
-import displayMessage from "./components/common/displayMessage.js";
 
 createMenu();
 
-const productsInCart = JSON.parse(localStorage.getItem("row"));
+const productsInCart = JSON.parse(localStorage.getItem("products"));
 console.log(productsInCart);
 
 const cart = document.querySelector(".cart");
-const productUrl = baseUrl + "/makeups/" + id;
+const productUrl = baseUrl + "/products/" + id;
 
 async function getProducts() {
     const response = await fetch(productUrl);
